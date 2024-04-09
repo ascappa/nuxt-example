@@ -8,37 +8,37 @@ export default defineNuxtConfig({
       // FIXME: workaround for https://github.com/nuxt/cli/issues/193
       if (!nuxt.options._prepare) {
         setTimeout(() => {
-          process.exit(0)
-        }, 500)
+          process.exit(0);
+        }, 500);
       }
     },
   },
 
   app: {
     head: {
-      title: 'Nuxt + VueFire Spark Plan Example',
+      title: "Nuxt + VueFire Spark Plan Example",
       link: [
         {
-          href: 'https://cdn.jsdelivr.net/npm/water.css@2/out/water.css',
-          rel: 'stylesheet',
+          href: "https://cdn.jsdelivr.net/npm/water.css@2/out/water.css",
+          rel: "stylesheet",
         },
         {
-          rel: 'icon',
-          type: 'image/svg+xml',
-          href: '/vuefire.svg',
+          rel: "icon",
+          type: "image/svg+xml",
+          href: "/vuefire.svg",
         },
       ],
     },
   },
 
-  css: ['~/assets/style.css'],
+  css: ["~/assets/style.css"],
 
   nitro: {
     // NOTE: we don't want to use the firebase preset because this is a static website and the firebase preset is for SSR
-    preset: 'node', // the default
+    preset: "node", // the default
   },
 
-  modules: ['nuxt-vuefire', '@vueuse/nuxt'],
+  modules: ["nuxt-vuefire", "@vueuse/nuxt"],
 
   vuefire: {
     emulators: {
@@ -56,21 +56,19 @@ export default defineNuxtConfig({
     },
 
     appCheck: {
-      provider: 'ReCaptchaV3',
+      provider: "ReCaptchaV3",
       // site key, NOT secret key
-      key: '6Ldmc3EnAAAAABDuQi-PGLBObXMOsVlXOntAX6WQ',
+      key: "6Ldmc3EnAAAAABDuQi-PGLBObXMOsVlXOntAX6WQ",
       isTokenAutoRefreshEnabled: true,
     },
 
     config: {
-      apiKey: 'AIzaSyBKBqCHUpxMNjRJ8uhgOTK0wMGr9LkkFOA',
-      authDomain: 'nuxt-vuefire-example-spark.firebaseapp.com',
-      databaseURL:
-        'https://nuxt-vuefire-example-spark-default-rtdb.europe-west1.firebasedatabase.app',
-      projectId: 'nuxt-vuefire-example-spark',
-      storageBucket: 'nuxt-vuefire-example-spark.appspot.com',
-      messagingSenderId: '639475067598',
-      appId: '1:639475067598:web:13fc8572370163aa913e9f',
+      apiKey: "AIzaSyDzvWHVVIYY5IjjJT-GZGT0u906qqDAQ4M",
+      authDomain: "nuxt-ea32e.firebaseapp.com",
+      projectId: "nuxt-ea32e",
+      storageBucket: "nuxt-ea32e.appspot.com",
+      messagingSenderId: "767147140807",
+      appId: "1:767147140807:web:112b3f335c21392e1600e2",
     },
   },
 
@@ -81,14 +79,14 @@ export default defineNuxtConfig({
   // since we are only using SSR for generation, we can only use a few of these rules effectively
   // https://nuxt.com/docs/guide/concepts/rendering#hybrid-rendering
   routeRules: {
-    '/': { isr: true },
+    "/": { isr: true },
     // Make some pages client only (since we have an SPA)
     // useful for authenticated pages that require the user to be logged in to be
     // displayed
-    '/admin': { ssr: false },
-    '/users': { ssr: false },
-    '/posts/new': { ssr: false },
-    '/emoji-panel': { ssr: false },
-    '/login': { ssr: false },
+    "/admin": { ssr: false },
+    "/users": { ssr: false },
+    "/posts/new": { ssr: false },
+    "/emoji-panel": { ssr: false },
+    "/login": { ssr: false },
   },
-})
+});
